@@ -4,6 +4,7 @@ import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {HomeComponent} from './home/home.component';
 import {AppRoutingModule} from '../app-routing.module';
+import {SharedModule} from '../shared/shared.module';
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -12,7 +13,8 @@ import {AppRoutingModule} from '../app-routing.module';
   imports: [
     CommonModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule
   ],
   exports: [
     HeaderComponent,
