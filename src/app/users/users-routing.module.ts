@@ -1,9 +1,16 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {UsersComponent} from './users.component';
+import {UserEditComponent} from './user-edit/user-edit.component';
+import {UsersGridComponent} from './users-grid/users-grid.component';
 
 const usersRoutes: Routes = [
-  {path: '', component: UsersComponent}
+  {
+    path: '', component: UsersComponent, children: [
+    {path: '', component: UsersGridComponent},
+    {path: ':id/edit', component: UserEditComponent}
+  ]
+  }
 ];
 
 @NgModule({

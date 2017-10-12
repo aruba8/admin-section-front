@@ -6,10 +6,12 @@ import {UsersGridComponent} from './users-grid/users-grid.component';
 import {UsersService} from './users.service';
 import {SharedModule} from '../shared/shared.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { UserEditComponent } from './user-edit/user-edit.component';
 @NgModule({
   declarations: [
     UsersComponent,
     UsersGridComponent,
+    UserEditComponent,
 
   ],
   imports: [
