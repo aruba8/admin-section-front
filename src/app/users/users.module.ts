@@ -7,6 +7,7 @@ import {UsersService} from './users.service';
 import {SharedModule} from '../shared/shared.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { UserEditComponent } from './user-edit/user-edit.component';
+import {HttpModule} from '@angular/http';
 @NgModule({
   declarations: [
     UsersComponent,
@@ -18,7 +19,8 @@ import { UserEditComponent } from './user-edit/user-edit.component';
     CommonModule,
     UsersRoutingModule,
     SharedModule,
-    NgbModule
+    NgbModule,
+    HttpModule
   ],
   providers: [UsersService]
 })

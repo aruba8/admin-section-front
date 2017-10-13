@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-xs-12">
     <form>
-      <div class="row">
+      <div class="row" *ngIf="userLoaded">
         <div class="col-xs-12">
           <div class="form-group">
             <label for="firstName">First Name</label>
@@ -9,7 +9,7 @@
                    class="form-control"
                    id="firstName"
                    name="firstName"
-                   value="{{editedUser.firstName}}">
+                   value="{{editedUser.first_name}}">
           </div>
           <div class="form-group">
             <label for="lastName">Last Name</label>
@@ -17,8 +17,15 @@
                    class="form-control"
                    id="lastName"
                    name="lastName"
-                   value="{{editedUser.lastName}}">
-
+                   value="{{editedUser.last_name}}">
+          </div>
+          <div class="form-group">
+            <label for="middleName">Middle Name</label>
+            <input type="text"
+                   class="form-control"
+                   id="middleName"
+                   name="lastName"
+                   value="{{editedUser.middle_name}}">
           </div>
           <div class="form-group">
             <label for="email">Email</label>
@@ -27,7 +34,6 @@
                    id="email"
                    name="email"
                    value="{{editedUser.email}}">
-
           </div>
           <button class="btn btn-primary" type="button">Save</button>
           <button class="btn btn-danger" type="button" (click)="onCancel()">Cancel</button>

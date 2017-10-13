@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {UsersService} from '../users.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {UserModel} from '../user.model';
+import {Response} from '@angular/http';
 
 @Component({
   selector: 'app-user-edit',
@@ -11,6 +12,7 @@ import {UserModel} from '../user.model';
 export class UserEditComponent implements OnInit {
   userId: number;
   editedUser: UserModel;
+  userLoaded = false;
 
   constructor(private usersService: UsersService,
               private route: ActivatedRoute,
@@ -21,7 +23,15 @@ export class UserEditComponent implements OnInit {
     this.route.params.subscribe(
       (params: Params) => {
         this.userId = +params['id'];
-        this.editedUser = this.usersService.getUsers()[this.userId];
+        this.usersService.getUser(this.userId).subscribe(
+          (resp: Response) => {
+            this.editedUser = resp.json();
+            this.userLoaded = true;
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
       }
     );
   }
