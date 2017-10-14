@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {WorkersComponent} from './workers.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {HttpModule} from '@angular/http';
-import {WorkersRoutingService} from './worker-routing.service';
+import {WorkersRoutingService} from './workers-routing.service';
 import {WorkersGridComponent} from './workers-grid/workers-grid.component';
 import {WorkersService} from './workers.service';
 import { WorkerEditComponent } from './worker-edit/worker-edit.component';
