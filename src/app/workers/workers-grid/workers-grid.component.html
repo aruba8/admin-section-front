@@ -1,0 +1,35 @@
+<h2>Workers</h2>
+<hr>
+<table class="table table-bordered table-striped table-responsive">
+  <thead>
+  <tr>
+    <th>id</th>
+    <th>Name</th>
+    <th>Worker Type</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let worker of workers">
+    <th scope="row">{{worker.id}}</th>
+    <td>{{worker.name}}</td>
+    <td>{{worker.worker_type}}</td>
+    <td>
+      <div class="dropdown" ngbDropdown>
+        <button class="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false" ngbDropdownToggle>
+          action
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" ngbDropdownMenu>
+          <a class="dropdown-item" (click)="onEditUser(worker.id)">Edit</a>
+          <a class="dropdown-item" href="#">Delete</a>
+        </div>
+      </div>
+    </td>
+  </tr>
+  </tbody>
+</table>
