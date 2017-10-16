@@ -6,7 +6,8 @@ import {HttpModule} from '@angular/http';
 import {WorkersRoutingService} from './workers-routing.service';
 import {WorkersGridComponent} from './workers-grid/workers-grid.component';
 import {WorkersService} from './workers.service';
-import { WorkerEditComponent } from './worker-edit/worker-edit.component';
+import {WorkerEditComponent} from './worker-edit/worker-edit.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -18,6 +19,7 @@ import { WorkerEditComponent } from './worker-edit/worker-edit.component';
       CommonModule,
       NgbModule,
       HttpModule,
+      ReactiveFormsModule,
       WorkersRoutingService
     ],
     providers: [WorkersService]

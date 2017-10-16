@@ -24,7 +24,6 @@ export class WorkersGridComponent implements OnInit, OnDestroy {
     this.workersSubscription = this.workersService.workersChanged.subscribe(
       (workers) => {
         this.workers = workers;
-        console.log(this.workers);
       }
     );
 

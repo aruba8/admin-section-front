@@ -6,6 +6,7 @@ import {Worker} from './worker.model';
 @Injectable()
 export class WorkersService {
   private workersEndPoint = 'http://localhost:8000/workers/';
+  private workerTypesEndPoint = 'http://localhost:8000/worker_types/';
   private workers: Worker[];
   workersChanged = new Subject<Worker[]>();
 
@@ -23,6 +24,19 @@ export class WorkersService {
     );
 
     return this.workers;
+  }
+
+  getWorkerTypes() {
+    return this.http.get(this.workerTypesEndPoint);
+
+  }
+
+  getWorker(id: number) {
+    return this.http.get(this.workersEndPoint + id + '/');
+  }
+
+  updateWorker(worker: Worker) {
+    return this.http.patch(this.workersEndPoint + worker.id + '/', worker);
   }
 
 }

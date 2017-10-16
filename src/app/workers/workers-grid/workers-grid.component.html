@@ -13,7 +13,7 @@
   <tr *ngFor="let worker of workers">
     <th scope="row">{{worker.id}}</th>
     <td>{{worker.name}}</td>
-    <td>{{worker.worker_type}}</td>
+    <td>{{worker.worker_type.worker_type_name}}</td>
     <td>
       <div class="dropdown" ngbDropdown>
         <button class="btn btn-secondary dropdown-toggle"
