@@ -16,7 +16,7 @@ export class WorkerEditComponent implements OnInit {
   workerId: number;
   workerTypes: { id: number, worker_type_name: string }[];
   workerFormGroup: FormGroup;
-  showSucces = false;
+  showSuccess = false;
   showError = false;
 
 
@@ -61,10 +61,9 @@ export class WorkerEditComponent implements OnInit {
   onUpdateWorker() {
     this.worker.name = this.workerFormGroup.value.name;
     this.worker.worker_type = this.workerFormGroup.value.workerType;
-    console.log(this.worker);
     this.workersService.updateWorker(this.worker).subscribe(
       () => {
-        this.showSucces = true;
+        this.showSuccess = true;
       }, (error) => {
         this.showError = true;
         console.log(error);

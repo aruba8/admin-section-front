@@ -26,4 +26,12 @@ export class UsersService {
     return this.http.get(this.usersEndPoint + id + '/');
   }
 
+  updateUser(user: UserModel) {
+    return this.http.patch(this.usersEndPoint + user.id + '/', user);
+  }
+
+  addUser(user: UserModel) {
+    return this.http.post(this.usersEndPoint, user);
+  }
+
 }

@@ -36,4 +36,8 @@ export class UsersGridComponent implements OnInit, OnDestroy {
     this.router.navigate([userId, 'edit'], {relativeTo: this.route});
   }
 
+  onAddUser() {
+    this.router.navigate(['new'], {relativeTo: this.route});
+  }
+
 }

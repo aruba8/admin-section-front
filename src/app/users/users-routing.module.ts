@@ -8,7 +8,8 @@ const usersRoutes: Routes = [
   {
     path: '', component: UsersComponent, children: [
     {path: '', component: UsersGridComponent},
-    {path: ':id/edit', component: UserEditComponent}
+    {path: ':id/edit', component: UserEditComponent},
+    {path: 'new', component: UserEditComponent}
   ]
   }
 ];

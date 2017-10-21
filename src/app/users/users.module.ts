@@ -8,6 +8,7 @@ import {SharedModule} from '../shared/shared.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import {HttpModule} from '@angular/http';
+import {ReactiveFormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
     UsersComponent,
@@ -18,6 +19,7 @@ import {HttpModule} from '@angular/http';
   imports: [
     CommonModule,
     UsersRoutingModule,
+    ReactiveFormsModule,
     SharedModule,
     NgbModule,
     HttpModule

@@ -1,15 +1,26 @@
 <div class="row">
   <div class="col-xs-12">
-    <form>
-      <div class="row" *ngIf="userLoaded">
+    <form [formGroup]="userFormGroup" (ngSubmit)="onSubmit()">
+      <div class="row">
         <div class="col-xs-12">
+          <div class="alert alert-success" role="alert" *ngIf="showSuccess">
+            Worker updated successfully!
+          </div>
+          <div class="alert alert-danger" role="alert" *ngIf="showError">
+            Something went wrong!
+          </div>
+
           <div class="form-group">
             <label for="firstName">First Name</label>
             <input type="text"
                    class="form-control"
                    id="firstName"
                    name="firstName"
-                   value="{{editedUser.first_name}}">
+                   formControlName="firstName">
+            <span
+              *ngIf="!userFormGroup.get('firstName').valid && userFormGroup.get('firstName').touched"
+              class="help-block alert-warning">First Name cannot be empty</span>
+
           </div>
           <div class="form-group">
             <label for="lastName">Last Name</label>
@@ -17,15 +28,19 @@
                    class="form-control"
                    id="lastName"
                    name="lastName"
-                   value="{{editedUser.last_name}}">
+                   formControlName="lastName">
+            <span
+              *ngIf="!userFormGroup.get('lastName').valid && userFormGroup.get('lastName').touched"
+              class="help-block alert-warning">Last Name cannot be empty</span>
+
           </div>
           <div class="form-group">
             <label for="middleName">Middle Name</label>
             <input type="text"
                    class="form-control"
                    id="middleName"
-                   name="lastName"
-                   value="{{editedUser.middle_name}}">
+                   name="middleName"
+                   formControlName="middleName">
           </div>
           <div class="form-group">
             <label for="email">Email</label>
@@ -33,10 +48,14 @@
                    class="form-control"
                    id="email"
                    name="email"
-                   value="{{editedUser.email}}">
+                   formControlName="email">
+            <span
+              *ngIf="!userFormGroup.get('email').valid && userFormGroup.get('email').touched"
+              class="help-block alert-warning">Please enter a valid email!</span>
+
           </div>
-          <button class="btn btn-primary" type="button">Save</button>
-          <button class="btn btn-danger" type="button" (click)="onCancel()">Cancel</button>
+          <button class="btn btn-primary" type="submit" [disabled]="!userFormGroup.valid">Save</button>
+          <button class="btn btn-danger" type="button" (click)="onCancel()">Back</button>
         </div>
       </div>
     </form>
